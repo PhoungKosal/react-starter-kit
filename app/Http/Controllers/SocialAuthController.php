@@ -18,7 +18,6 @@ class SocialAuthController extends Controller
     {
         // get user data from provider
         $socialUser = Socialite::driver($provider)->user();
-        dd($socialUser);
         // check if user exists
         $user = User::where('email', $socialUser->getEmail())->first();
         if(!$user){
